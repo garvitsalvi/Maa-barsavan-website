@@ -1,0 +1,121 @@
+.floating-buttons {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.float-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: var(--transition);
+  width: fit-content;
+}
+
+.float-btn::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+  animation: pulse-ring 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.whatsapp-btn::before {
+  background: rgba(37, 211, 102, 0.35);
+}
+
+.call-btn::before {
+  background: rgba(118, 75, 162, 0.35);
+}
+
+.insta-btn::before {
+  background: rgba(220, 39, 67, 0.35);
+}
+
+.call-btn::before {
+  animation-delay: 0.8s;
+}
+
+.insta-btn::before {
+  animation-delay: 1.6s;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.float-btn span {
+  display: inline;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+}
+
+.call-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.call-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(118, 75, 162, 0.4);
+}
+
+.insta-btn {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.insta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(220, 39, 67, 0.4);
+}
+
+@media (max-width: 768px) {
+  .floating-buttons {
+    left: 12px;
+    bottom: 16px;
+    gap: 8px;
+  }
+
+  .float-btn {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+
+  .float-btn span {
+    display: none;
+  }
+
+  .float-btn {
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0;
+  }
+}

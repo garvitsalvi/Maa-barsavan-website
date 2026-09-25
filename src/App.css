@@ -1,0 +1,57 @@
+/* Page Hero (shared across all pages) */
+.page-hero {
+  position: relative;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 60px;
+  overflow: hidden;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(43,35,26,0.08) 100%);
+  z-index: 1;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.page-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: 12px;
+  text-shadow: none;
+}
+
+.page-hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--espresso-soft);
+  font-weight: 400;
+}
+
+main {
+  min-height: auto;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    min-height: 35vh;
+    padding: 100px 0 40px;
+  }
+
+  .page-hero-title {
+    font-size: 2rem;
+  }
+
+  .page-hero-subtitle {
+    font-size: 1rem;
+  }
+}

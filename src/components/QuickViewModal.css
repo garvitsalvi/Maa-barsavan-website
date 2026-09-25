@@ -1,0 +1,184 @@
+.qv-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(43, 35, 26, 0.7);
+  backdrop-filter: blur(6px);
+  padding: 20px;
+}
+
+.qv-modal {
+  position: relative;
+  background: var(--ivory);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(43, 35, 26, 0.4);
+}
+
+.qv-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 20;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(43, 35, 26, 0.08);
+  color: var(--espresso);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.qv-close:hover {
+  background: rgba(43, 35, 26, 0.15);
+  transform: rotate(90deg);
+}
+
+.qv-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 400px;
+}
+
+.qv-image-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--cream), var(--cream-2));
+  border-radius: 16px 0 0 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.qv-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qv-image-wrap .react-transform-wrapper {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.qv-image-wrap .react-transform-component {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.qv-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  cursor: grab;
+}
+
+.qv-image:active {
+  cursor: grabbing;
+}
+
+.qv-info {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.qv-category {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--bronze);
+  background: rgba(168, 124, 63, 0.1);
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.qv-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.qv-desc {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.qv-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qv-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 26px;
+  background: #25D366;
+  color: var(--white);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: var(--transition);
+  width: auto;
+  align-self: flex-start;
+}
+
+.qv-whatsapp-btn:hover {
+  background: #1da851;
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .qv-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .qv-image-section {
+    border-radius: 16px 16px 0 0;
+    min-height: 280px;
+  }
+
+  .qv-info {
+    padding: 24px 20px;
+  }
+
+  .qv-title {
+    font-size: 1.25rem;
+  }
+
+  .qv-whatsapp-btn {
+    width: 100%;
+  }
+}
