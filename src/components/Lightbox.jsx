@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { isVideo, isYouTube, getYouTubeId } from '../utils/mediaUtils'
 import './Lightbox.css'
 
 const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }) => {
@@ -32,10 +33,10 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }) => {
 
       <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
         <div className="lightbox-image-wrap">
-          {current.type === 'video' ? (
-            current.src.includes('youtube.com') || current.src.includes('youtu.be') ? (
+          {isVideo(current) ? (
+            isYouTube(current.src) ? (
               <iframe
-                src={`https://www.youtube.com/embed/${current.src.split('v=')[1] || current.src.split('/').pop()}`}
+                src={`https://www.youtube.com/embed/${getYouTubeId(current.src)}`}
                 title={current.title || 'Gallery video'}
                 className="lightbox-video"
                 frameBorder="0"

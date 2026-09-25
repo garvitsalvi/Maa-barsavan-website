@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import galleryImages, { galleryCategories } from '../data/gallery'
 import Lightbox from '../components/Lightbox'
+import { isVideo, isYouTube, getYouTubeId } from '../utils/mediaUtils'
 import './Gallery.css'
 
 const Gallery = () => {
@@ -38,9 +39,9 @@ const Gallery = () => {
   }
 
   const renderMedia = (item) => {
-    if (item.type === 'video') {
-      if (item.src.includes('youtube.com') || item.src.includes('youtu.be')) {
-        const videoId = item.src.split('v=')[1] || item.src.split('/').pop()
+    if (isVideo(item)) {
+      if (isYouTube(item.src)) {
+        const videoId = getYouTubeId(item.src)
         return (
           <iframe
             src={`https://www.youtube.com/embed/${videoId}`}
@@ -57,7 +58,6 @@ const Gallery = () => {
         <video
           src={item.src}
           className="gallery-media"
-          controls
           autoPlay
           muted
           loop
@@ -115,7 +115,7 @@ const Gallery = () => {
             {filteredImages.map((img, index) => (
               <div
                 key={img.id}
-                className={`gallery-item reveal ${img.type === 'video' ? 'gallery-item-video' : ''}`}
+                className={`gallery-item reveal ${isVideo(img) ? 'gallery-item-video' : ''}`}
                 onClick={() => openLightbox(index)}
               >
                 {renderMedia(img)}
