@@ -52,7 +52,7 @@ const products = [
     id: 8,
     category: 'Divine Art',
     title: ' ',
-    description: ' .',
+    description: ' ',
     image: '/images/product8.webp',
   },
   {

@@ -4,14 +4,28 @@ import './Lightbox.css'
 
 const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }) => {
   useEffect(() => {
+    const state = { lightboxOpen: true }
+    history.pushState(state, '', window.location.href)
+
+    const handlePopState = (e) => {
+      if (e.state?.lightboxOpen) {
+        e.preventDefault()
+        onClose()
+      }
+    }
+
     const handleKey = (e) => {
       if (e.key === 'Escape') onClose()
       if (e.key === 'ArrowLeft') onPrev()
       if (e.key === 'ArrowRight') onNext()
     }
+
+    window.addEventListener('popstate', handlePopState)
     document.addEventListener('keydown', handleKey)
     document.body.style.overflow = 'hidden'
+
     return () => {
+      window.removeEventListener('popstate', handlePopState)
       document.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
     }

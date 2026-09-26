@@ -5,12 +5,26 @@ import './QuickViewModal.css'
 
 const QuickViewModal = ({ product, onClose }) => {
   useEffect(() => {
+    const state = { quickViewOpen: true }
+    history.pushState(state, '', window.location.href)
+
+    const handlePopState = (e) => {
+      if (e.state?.quickViewOpen) {
+        e.preventDefault()
+        onClose()
+      }
+    }
+
     const handleKey = (e) => {
       if (e.key === 'Escape') onClose()
     }
+
+    window.addEventListener('popstate', handlePopState)
     document.addEventListener('keydown', handleKey)
     document.body.style.overflow = 'hidden'
+
     return () => {
+      window.removeEventListener('popstate', handlePopState)
       document.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
     }
