@@ -37,11 +37,12 @@ const Footer = ({ trackWhatsApp, trackMaps }) => {
           <div className="footer-col">
             <h4 className="footer-heading">Products</h4>
             <div className="footer-links">
-              <Link to="/products">Wooden God Idols</Link>
-              <Link to="/products">Religious Frames</Link>
-              <Link to="/products">Glass Frames</Link>
-              <Link to="/products">Photo Frames</Link>
-              <Link to="/products">Custom Frames</Link>
+              <Link to="/products">Wooden Premium Idols</Link>
+              <Link to="/products">Divine Art</Link>
+              <Link to="/products">Classic Art</Link>
+              <Link to="/products">Golden Art</Link>
+              <Link to="/products">Designer Frames</Link>
+              <Link to="/products">Fine Art</Link>
             </div>
           </div>
 

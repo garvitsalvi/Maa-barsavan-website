@@ -179,22 +179,22 @@ const Home = () => {
               </div>
               <div className="insta-grid">
                 <div className="insta-grid-item">
-                  <div className="insta-img-placeholder"><img src="/images/image1.jpg" alt="Post 1" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                  <div className="insta-img-placeholder"><img src="/images/image1.webp" alt="Post 1" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                 </div>
                 <div className="insta-grid-item">
-                  <div className="insta-img-placeholder"><img src="/images/image2.jpg" alt="Post 2" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                  <div className="insta-img-placeholder"><img src="/images/image2.webp" alt="Post 2" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                 </div>
                 <div className="insta-grid-item">
-                  <div className="insta-img-placeholder"><img src="/images/image3.jpg" alt="Post 3" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                  <div className="insta-img-placeholder"><img src="/images/image3.webp" alt="Post 3" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                 </div>
                 <div className="insta-grid-item">
-                  <div className="insta-img-placeholder"><img src="/images/image4.jpg" alt="Post 4" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                  <div className="insta-img-placeholder"><img src="/images/image4.webp" alt="Post 4" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                 </div>
                 <div className="insta-grid-item">
-                  <div className="insta-img-placeholder"><img src="/images/image5.jpg" alt="Post 5" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                  <div className="insta-img-placeholder"><img src="/images/image5.webp" alt="Post 5" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                 </div>
                 <div className="insta-grid-item">
-                  <div className="insta-img-placeholder"><img src="/images/image6.png" alt="Post 6" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
+                  <div className="insta-img-placeholder"><img src="/images/image6.webp" alt="Post 6" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /></div>
                 </div>
               </div>
               <a
